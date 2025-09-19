@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/**/*.test.js --timeout 5000",
+    "test:unit": "mocha test/unit/**/*.test.js --timeout 5000",
+    "test:integration": "mocha test/integration/**/*.test.js --timeout 5000",
+    "test:rest": "mocha test/integration/rest/**/*.test.js --timeout 5000",
+    "test:graphql": "mocha test/integration/graphql/**/*.test.js --timeout 5000"
   },
   "repository": {
     "type": "git",
@@ -24,5 +28,12 @@
     "graphql": "^16.11.0",
     "jsonwebtoken": "^9.0.2",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "chai": "^4.3.10",
+    "supertest": "^6.3.3",
+    "sinon": "^17.0.1",
+    "sinon-chai": "^3.7.0"
   }
 }
