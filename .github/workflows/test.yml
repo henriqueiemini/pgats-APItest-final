@@ -5,6 +5,11 @@ on:
     branches: [ main, develop ]
   pull_request:
     branches: [ main ]
+  schedule:
+    # Run tests daily at 6:00 AM UTC (adjust time as needed)
+    - cron: '0 6 * * *'
+  # Allow manual triggering of the workflow
+  workflow_dispatch:
 
 jobs:
   test:
